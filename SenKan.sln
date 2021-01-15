@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenKan", "SenKan\SenKan.csproj", "{2FA506FD-C6C1-4D81-985B-C6422ABA1A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenKanConsole", "SenKanConsole\SenKanConsole.csproj", "{8987D3D9-0DBD-4AFE-A4B0-67CC5F8A3F4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenKanAPI", "SenKanAPI\SenKanAPI.csproj", "{1E57F2F8-3FEF-45A5-9439-ACE3E38BE94B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FA506FD-C6C1-4D81-985B-C6422ABA1A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA506FD-C6C1-4D81-985B-C6422ABA1A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA506FD-C6C1-4D81-985B-C6422ABA1A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA506FD-C6C1-4D81-985B-C6422ABA1A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8987D3D9-0DBD-4AFE-A4B0-67CC5F8A3F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8987D3D9-0DBD-4AFE-A4B0-67CC5F8A3F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8987D3D9-0DBD-4AFE-A4B0-67CC5F8A3F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8987D3D9-0DBD-4AFE-A4B0-67CC5F8A3F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E57F2F8-3FEF-45A5-9439-ACE3E38BE94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E57F2F8-3FEF-45A5-9439-ACE3E38BE94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E57F2F8-3FEF-45A5-9439-ACE3E38BE94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E57F2F8-3FEF-45A5-9439-ACE3E38BE94B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
