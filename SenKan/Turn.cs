@@ -8,7 +8,9 @@ namespace SenKan
 
         public Turn(int playerId, int x, int y)
         {
-            
+            PlayerId = playerId;
+            X = x;
+            Y = y;
         }
     }
 }
