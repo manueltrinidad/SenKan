@@ -28,7 +28,7 @@ namespace SenKan
                 throw new Exception(error);
             }
             // This will only work with 2 players... imagine battleship with 2+ players...
-            var enemy = player.Id == 1 ? Match.Players[1] : Match.Players[0];
+            var enemy = player.GameId == 1 ? Match.Players[1] : Match.Players[0];
             foreach (var ship in enemy.Ships)
             {
                 foreach (var coordinate in ship.Coordinates)
@@ -36,6 +36,10 @@ namespace SenKan
                     if (coordinate.X == x && coordinate.Y == y)
                     {
                         coordinate.IsHit = true;
+                        if (IsShipDestroyed(ship))
+                        {
+                            ship.IsUp = false;
+                        }
                     }
                 }
             }
@@ -57,7 +61,7 @@ namespace SenKan
 
             foreach (var turn in Match.TurnHistory)
             {
-                if (turn.X == x && turn.Y == y && turn.PlayerId == player.Id)
+                if (turn.X == x && turn.Y == y && turn.PlayerId == player.GameId)
                 {
                     return "You cannot attack the same coordinates twice.";
                 }
@@ -70,12 +74,9 @@ namespace SenKan
         {
             foreach (var ship in enemy.Ships)
             {
-                foreach (var coordinate in ship.Coordinates)
+                if (ship.IsUp)
                 {
-                    if (!coordinate.IsHit)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
 
@@ -83,8 +84,21 @@ namespace SenKan
         }
         private void RecordTurn(Player player, int x, int y)
         {
-            var turn = new Turn(player.Id, x, y);
+            var turn = new Turn(player.GameId, x, y);
             Match.TurnHistory.Add(turn);
+        }
+
+        private bool IsShipDestroyed(Ship ship)
+        {
+            foreach (var shipCoordinate in ship.Coordinates)
+            {
+                if (!shipCoordinate.IsHit)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

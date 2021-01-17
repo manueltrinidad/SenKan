@@ -4,11 +4,10 @@ namespace SenKan
 {
     public class Ship
     {
-        public int Id { get; set; }
         public bool IsUp { get; set; }
         public List<ShipCoordinate> Coordinates { get; set; }
 
-        public Ship(int id, int xStart, int yStart, int xEnd, int yEnd)
+        public Ship(int xStart, int yStart, int xEnd, int yEnd)
         {
             var coordinates = new List<ShipCoordinate>();
             int length;
@@ -53,7 +52,6 @@ namespace SenKan
             }
             Coordinates = coordinates;
             IsUp = true;
-            Id = id;
         }
     }
 }

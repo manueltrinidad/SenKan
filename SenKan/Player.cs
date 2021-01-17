@@ -4,13 +4,13 @@ namespace SenKan
 {
     public class Player
     { 
-        public int Id { get; set; }
+        public int GameId { get; set; }
         public List<Ship> Ships { get; set; }
         public string Name { get; set; }
 
-        public Player(int id, List<Ship> ships, string name)
+        public Player(int gameId, List<Ship> ships, string name)
         {
-            Id = id;
+            GameId = gameId;
             Ships = ships;
             Name = name;
 

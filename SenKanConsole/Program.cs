@@ -62,7 +62,7 @@ namespace SenKanConsole
         {
             Player enemy;
             // This will only work with 2 players... imagine battleship with 2+ players...
-            enemy = player.Id == 1 ? engine.Match.Players[1] : engine.Match.Players[0];
+            enemy = player.GameId == 1 ? engine.Match.Players[1] : engine.Match.Players[0];
             for (var y = 1; y < engine.Match.Ruleset.Board.Width+1; y++)
             {
                 for (var x = 1; x < engine.Match.Ruleset.Board.Height+1; x++)
@@ -128,7 +128,7 @@ namespace SenKanConsole
             var playerTurns = new List<Turn>();
             foreach (var turn in turnHistory)
             {
-                if (turn.PlayerId == player.Id)
+                if (turn.PlayerId == player.GameId)
                 {
                     playerTurns.Add(turn);
                 }
@@ -149,21 +149,21 @@ namespace SenKanConsole
             
             var board = new Board(boardWidth, boardHeight);
             var shipRulesets = new List<ShipRuleset>();
-            shipRulesets.Add(new ShipRuleset(1, 2, 2));
-            shipRulesets.Add((new ShipRuleset(2, 3, 2)));
-            var ruleset = new Ruleset(1, board, shipRulesets);
+            shipRulesets.Add(new ShipRuleset( 2, 2));
+            shipRulesets.Add((new ShipRuleset( 3, 2)));
+            var ruleset = new Ruleset(board, shipRulesets);
             
             var p1Ships = new List<Ship>();
             var p2Ships = new List<Ship>();
-            p1Ships.Add(new Ship(1, 1, 3, 1, 1));
-            p1Ships.Add(new Ship(2, 3, 4, 5, 4));
-            p1Ships.Add(new Ship(3, 6, 8, 6, 7));
-            p1Ships.Add(new Ship(4, 8, 5, 8, 6));
+            p1Ships.Add(new Ship(1, 3, 1, 1));
+            p1Ships.Add(new Ship( 3, 4, 5, 4));
+            p1Ships.Add(new Ship( 6, 8, 6, 7));
+            p1Ships.Add(new Ship( 8, 5, 8, 6));
             
-            p2Ships.Add(new Ship(5, 2, 7, 2, 6));
-            p2Ships.Add(new Ship(6, 5, 5, 5, 7));
-            p2Ships.Add(new Ship(7, 6, 3, 5, 3));
-            p2Ships.Add(new Ship(8, 7, 5, 7, 7));
+            p2Ships.Add(new Ship( 2, 7, 2, 6));
+            p2Ships.Add(new Ship( 5, 5, 5, 7));
+            p2Ships.Add(new Ship( 6, 3, 5, 3));
+            p2Ships.Add(new Ship( 7, 5, 7, 7));
             
             var players = new List<Player>();
             players.Add(new Player(1, p1Ships, "Manuel"));
